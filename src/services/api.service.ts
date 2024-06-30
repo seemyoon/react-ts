@@ -14,6 +14,7 @@ const getAllUsers = async () => {
 }
 
 const getPostsOfUserById = async (id: number) => {
-    return await axiosInstance.get("/posts/" + id).then(response => response.data)
+
+    return await axiosInstance.get("/users/" + id + "/posts/").then(response => response.data.posts)
 }
 export {getAllUsers, getPostsOfUserById}

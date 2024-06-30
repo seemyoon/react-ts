@@ -13,9 +13,8 @@ const UsersComponent = () => {
         getAllUsers().then((value: IUsers[]) => setUsers([...value]))
     }, [])
 
-    const getPosts = (id: number) => {
-        getPostsOfUserById(id).then((posts: IPosts[]) => {
-            console.log('Fetched posts:', posts);
+    const getPosts = (userId: number) => {
+        getPostsOfUserById(userId).then((posts: IPosts[]) => {
             setPosts([...posts]);
         });
     }
