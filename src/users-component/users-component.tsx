@@ -1,0 +1,34 @@
+import {useEffect, useState} from "react";
+import {getAllUsers, getPostsOfUserById} from '../services/api.service'
+import {IUsers} from '../models/IUsers/IUsers'
+import {IPosts} from "../models/IPosts/IPosts";
+import UserComponent from "../user-component/user-component";
+import PostsComponent from "../services/post-component/PostsComponent";
+
+const UsersComponent = () => {
+    const [users, setUsers] = useState<IUsers[]>([])
+    const [posts, setPosts] = useState<IPosts[]>([])
+
+    useEffect(() => {
+        getAllUsers().then((value: IUsers[]) => setUsers([...value]))
+    }, [])
+
+    const getPosts = (id: number) => {
+        getPostsOfUserById(id).then((posts: IPosts[]) => {
+            console.log('Fetched posts:', posts);
+            setPosts([...posts]);
+        });
+    }
+    return (
+        <div>
+            <div>
+                {users.map((value) => (<UserComponent key={value.id} user={value} getPosts={getPosts}/>))}
+            </div>
+            <div>
+                <PostsComponent posts={posts} />
+            </div>
+        </div>
+
+    )
+}
+export default UsersComponent;
