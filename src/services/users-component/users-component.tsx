@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
-import {getAllUsers, getPostsOfUserById} from '../services/api.service'
-import {IUsers} from '../models/IUsers/IUsers'
-import {IPosts} from "../models/IPosts/IPosts";
+import {getAllUsers, getPostsOfUserById} from '../api.service'
+import {IUsers} from '../../models/IUsers/IUsers'
+import {IPosts} from "../../models/IPosts/IPosts";
 import UserComponent from "../user-component/user-component";
-import PostsComponent from "../services/post-component/PostsComponent";
+import PostsComponent from "../post-component/PostsComponent";
 
 const UsersComponent = () => {
     const [users, setUsers] = useState<IUsers[]>([])

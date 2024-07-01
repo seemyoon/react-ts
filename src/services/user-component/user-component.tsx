@@ -1,4 +1,4 @@
-import {IUsers} from "../models/IUsers/IUsers";
+import {IUsers} from "../../models/IUsers/IUsers";
 import {FC} from "react";
 import styles from './iUserStyles.module.css'
 
