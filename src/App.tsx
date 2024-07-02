@@ -1,15 +1,15 @@
 import React from 'react';
-import useCustomFetch from './hooks/useFetchUsers'
-
+import useCustomTemplateUseToggle from "./hooks/useToggle";
 
 const App = () => {
-    const data = useCustomFetch<{ id: number, name: string }>("/users");
+    const {boo, toggle} = useCustomTemplateUseToggle(false)
+    console.log(boo)
     return (
-        <>
-            {
-                data.map(value => <div key={value.id}>{value.name}</div>)
-            }
-        </>
+        <div>
+            <button onClick={toggle}>
+                click me
+            </button>
+        </div>
     )
 }
 
