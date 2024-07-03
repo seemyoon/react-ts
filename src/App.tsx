@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import usePrevious from "./hook/usePrevious";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [num, setNum] = useState(0);
+    return (
+        <div>
+            <h1>
+                Current:{num} Previous: {usePrevious(num)}
+            </h1>
+            <button onClick={() => {
+                setNum(value => value + 1)
+            }}>
+                click me
+            </button>
+        </div>
+    )
 }
 
 export default App;
