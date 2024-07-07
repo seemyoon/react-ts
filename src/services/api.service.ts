@@ -18,4 +18,4 @@ const getPostsOfUsers = async () => {
         + "posts").then(res => res.data.posts);
 }
 
-export default {getAllUsers, getPostsOfUsers}
+export {getAllUsers, getPostsOfUsers}
