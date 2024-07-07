@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {UsersComponent} from "./components/UsersComponent";
+import {UsersComponent} from "./services/users-component/UsersComponent";
 
 class App extends Component {
   render() {

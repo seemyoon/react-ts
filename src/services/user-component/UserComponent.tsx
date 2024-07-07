@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {IUsers} from "../model/IUsers/IUsers";
+import {IUsers} from "../../model/IUsers/IUsers";
+import styles from './iUserStyles.module.css'
 
 type State = {
     user: IUsers;
@@ -19,7 +20,9 @@ class UserComponent extends Component  <Props, State> {
 
     render() {
         return (
-            <div>
+
+            <ul className={styles.listReset}>
+                <hr className={styles.line}/>
                 <li>
                     <img src={this.state.user.image} alt={this.state.user.firstName}/>
                 </li>
@@ -53,7 +56,13 @@ class UserComponent extends Component  <Props, State> {
                 <li>Address: {this.state.user.address.address}, {this.state.user.address.city}, {this.state.user.address.state}, {this.state.user.address.country}</li>
                 <li>Coordinates: {this.state.user.address.coordinates.lat}, {this.state.user.address.coordinates.lng}</li>
                 <li>EIN: {this.state.user.ein}</li>
-            </div>
+                <button onClick={() => {
+                    getPosts(id)
+                }
+                }>Get all posts by user id
+                </button>
+                <hr/>
+            </ul>
         );
     }
 }

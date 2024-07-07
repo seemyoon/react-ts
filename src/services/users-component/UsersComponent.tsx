@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import UserComponent from './UserComponent';
-import {getAllUsers} from "../services/api.service"
+import UserComponent from '../user-component/UserComponent';
+import {getAllUsers} from "../api.service"
 // import {getPostsOfUsers} from '../services/api.service'
-import {IUsers} from "../model/IUsers/IUsers";
+import {IUsers} from "../../model/IUsers/IUsers";
 // import {IPosts} from "../model/IPosts/IPosts";
 
 type IState= {
