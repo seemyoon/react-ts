@@ -5,58 +5,18 @@ import {getAllUsers} from "../services/api.service"
 import {IUsers} from "../model/IUsers/IUsers";
 // import {IPosts} from "../model/IPosts/IPosts";
 
-interface IState {
-    users: IUsers;
+type IState= {
+    users: IUsers[];
 }
 
-class UsersComponent extends Component <{ users: IUsers }, IState> {
+class UsersComponent extends Component <{}, IState> {
 
-    state: IState = {
-        users: {
-            id: 0,
-            bank: {cardType: "", cardExpire: "", cardNumber: "", iban: "", currency: ""},
-            userAgent: "",
-            crypto: {coin: "", network: "", wallet: ""},
-            age: 0,
-            company: {
-                department: "",
-                address: {
-                    state: "",
-                    address: "",
-                    city: "",
-                    stateCode: "",
-                    postalCode: "",
-                    coordinates: {lat: 0, lng: 0},
-                    country: ""
-                }, name: "", title: ""
-            },
-            ein: "",
-            address: {state: "", address: "", city: "", stateCode: "", coordinates: {lat: 0, lng: 0}, country: "", postalCode: ""},
-            hair: {color: "", type: ""},
-            email: "",
-            ssn: "",
-            eyeColor: "",
-            bloodGroup: "",
-            gender: 0,
-            ip: "",
-            height: 0,
-            image: "",
-            macAddress: "",
-            firstName: "",
-            lastName: "",
-            maidenName: "",
-            phone: "",
-            role: "",
-            password: "",
-            university: "",
-            weight: 0,
-            username: "",
-            birthDate: ""
-        }
+    state:IState = {
+        users: []
     }
 
     componentDidMount() {
-        getAllUsers().then((value: IUsers) => {
+        getAllUsers().then((value: IUsers[]) => {
             this.setState({users: value});
         })
     }
@@ -64,7 +24,7 @@ class UsersComponent extends Component <{ users: IUsers }, IState> {
     render() {
         return (
             <div>
-                <UserComponent/>
+                {this.state.users.map(user=><UserComponent user={user} key={user.id}/>)}
             </div>
 
         );

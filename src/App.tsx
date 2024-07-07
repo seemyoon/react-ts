@@ -5,7 +5,7 @@ import {UsersComponent} from "./components/UsersComponent";
 class App extends Component {
   render() {
     return (
-    <UsersComponent/>
+    <UsersComponent />
   );
   }
 }
