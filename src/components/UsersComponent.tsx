@@ -71,4 +71,4 @@ class UsersComponent extends Component <{ users: IUsers }, IState> {
     }
 }
 
-export default UsersComponent;
+export {UsersComponent};
