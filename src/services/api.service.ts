@@ -1,4 +1,7 @@
 import axios from "axios";
+import {IPosts} from "../model/IPosts/IPosts";
+import {IUsers} from "../model/IUsers/IUsers";
+
 
 let axiosInstance = axios.create(
     {
@@ -8,11 +11,11 @@ let axiosInstance = axios.create(
         }
     }
 );
-const getAllUsers = async () => {
+const getAllUsers = async ():Promise<IUsers[]>=> {
     return await axiosInstance.get("/users").then(res => res.data.users);
 
 }
-const getPostsOfUsers = async (id: number) => {
+const getPostsOfUsers = async (id: number):Promise<IPosts[]> => {
     return await axiosInstance.get("/users/" + id + "/posts/").then(res => res.data.posts);
 }
 
