@@ -7,6 +7,7 @@ type State = {
 }
 type Props = {
     user: IUsers;
+    getPosts: (id:number) => void
 }
 
 class UserComponent extends Component  <Props, State> {
@@ -14,11 +15,13 @@ class UserComponent extends Component  <Props, State> {
     constructor(props: Props) {
         super(props)
         this.state = {
-            user: props.user
+            user: props.user,
         };
+
     }
 
     render() {
+        const { getPosts } = this.props;
         return (
 
             <ul className={styles.listReset}>
@@ -57,8 +60,9 @@ class UserComponent extends Component  <Props, State> {
                 <li>Coordinates: {this.state.user.address.coordinates.lat}, {this.state.user.address.coordinates.lng}</li>
                 <li>EIN: {this.state.user.ein}</li>
                 <button onClick={() => {
-                    getPosts(id)
+                    getPosts(this.state.user.id)
                 }
+
                 }>Get all posts by user id
                 </button>
                 <hr/>

@@ -9,13 +9,11 @@ let axiosInstance = axios.create(
     }
 );
 const getAllUsers = async () => {
-    return await axiosInstance.get("/users").then(res =>res.data.users);
+    return await axiosInstance.get("/users").then(res => res.data.users);
 
 }
-const getPostsOfUsers = async () => {
-    return await axiosInstance.get("/users/" +
-        // id
-        + "posts").then(res => res.data.posts);
+const getPostsOfUsers = async (id: number) => {
+    return await axiosInstance.get("/users/" + id + "/posts/").then(res => res.data.posts);
 }
 
 export {getAllUsers, getPostsOfUsers}
