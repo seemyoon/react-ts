@@ -15,6 +15,7 @@ class PostsComponent extends Component< Props, IPostsProps> {
         };
     }
     render() {
+
         return (
             <ul>
                 {this.state.posts.map((value) => <li key={value.id}>{value.userId}: {value.body}</li>)}

@@ -14,7 +14,7 @@ class UsersComponent extends Component <{}, IState> {
 
     state: IState = {
         users: [],
-        posts: []
+        posts: [],
     }
 
     componentDidMount() {
@@ -24,15 +24,16 @@ class UsersComponent extends Component <{}, IState> {
     }
 
     getPosts = (userId: number) => {
+
         getPostsOfUsers(userId).then((value: IPosts[]) =>
-            // this.setState({ posts: value })
-        console.log(value)
+            this.setState({posts: value})
         );
 
     }
 
 
     render() {
+
         return (
             <div>
                 <div>

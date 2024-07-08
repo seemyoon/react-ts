@@ -22,6 +22,7 @@ class UserComponent extends Component  <Props, State> {
 
     render() {
         const { getPosts } = this.props;
+
         return (
 
             <ul className={styles.listReset}>
