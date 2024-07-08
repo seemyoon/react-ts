@@ -6,7 +6,6 @@ type IPostsProps = {
 }
 
 const PostsComponent: FC<IPostsProps> = ({posts}) => {
-    console.log('Rendering posts:', posts);
     posts.map((value, index) => console.log(value))
     return (
         <ul>
