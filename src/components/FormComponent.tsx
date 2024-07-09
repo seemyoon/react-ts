@@ -18,12 +18,10 @@ const FormComponent = () => {
         postUsers(data).then(res => console.log(res));
     };
     return (<div>
-            {errors.id && <div>{errors.id.message}</div>}
             {errors.userId && <div>{errors.userId.message}</div>}
             {errors.title && <div>{errors.title.message}</div>}
             {errors.body && <div>{errors.body.message}</div>}
             <form onSubmit={handleSubmit(formSubmitHandler)}>
-                <input type="number" {...register("id")}></input>
                 <input type="number" {...register("userId")}></input>
                 <input type="text" {...register("title")}></input>
                 <input type="text" {...register("body")}></input>
