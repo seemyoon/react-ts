@@ -17,6 +17,6 @@ const getAllPosts = async () => {
 }
 
 const getAllComments = async () => {
-    return await axiosInstance.get("/coments").then((res) => res);
+    return await axiosInstance.get("/comments").then((res) => res);
 }
 export {getAllUsers, getAllPosts, getAllComments}
