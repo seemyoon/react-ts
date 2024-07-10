@@ -1,9 +1,23 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {IPosts} from "../../models/IPosts/IPosts";
 
-const PostsComponent = () => {
+interface TypeProps {
+    posts: IPosts[]
+}
+
+const PostsComponent: FC<TypeProps> = ({posts}) => {
+
     return (
         <div>
-            PostsComponent
+
+            <ul>
+                {
+                    posts.map(post => (
+                        <li key={post.id}>{post.id}{post.userId}{post.body}{post.title}</li>))
+                }
+            </ul>
+
+
         </div>
     );
 };

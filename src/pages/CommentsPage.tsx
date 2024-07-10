@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import CommentsComponent from "../component/CommentsComponent/CommentsComponent";
 import {IComments} from "../models/IComments/IComments";
 import {getAllComments} from "../services/api.service";
 
 const CommentsPage = () => {
-    const [comments, setComments] = useState<IComments[]>()
+    const [comments, setComments] = useState<IComments[]>([])
 
-    const getPosts = () =>{
-        getAllComments().then(value  => setComments(value))
-    }
+    useEffect(() => {
+        getAllComments().then((values: IComments[]) => setComments([...values]))
+    }, []);
     return (
         <div>
-            <CommentsComponent />
+            <CommentsComponent comments={comments}/>
         </div>
     );
 };
