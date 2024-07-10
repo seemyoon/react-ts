@@ -5,7 +5,6 @@ const CommentsPage = () => {
 
     return (
         <div>
-
             <CommentsComponent/>
         </div>
     );
