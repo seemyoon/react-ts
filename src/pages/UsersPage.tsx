@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {getAllUsers} from "../services/api.service";
 import {IUsers} from "../models/IUser/IUser";
+import MenuComponent from "../components/MenuComponent";
+import UsersComponent from "../components/UsersComponent";
 
 
 const UsersPage = () => {
@@ -11,13 +13,7 @@ const UsersPage = () => {
     console.log(users)
     return (
         <div>
-            {
-                <ul>
-                    {
-                        users.map(value =>(<li>{value.id}{value.address.geo.lng}{}</li> ))
-                    }
-                </ul>
-            }
+            <UsersComponent users={users} />
         </div>
     );
 };
