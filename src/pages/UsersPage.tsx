@@ -11,7 +11,7 @@ const UsersPage = () => {
     }, []);
     return (
         <div>
-            <UsersComponent users={users} />
+            <UsersComponent users={users}/>
         </div>
     );
 };
