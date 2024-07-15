@@ -6,7 +6,10 @@ interface IProps{
 const CommentsComponent:FC<IProps> = ({comments}) => {
     return (
         <div>
-            
+            {
+                comments.map(comment => (
+                    <li key={comment.id}>{comment.id}{comment.name}{comment.postId}{comment.email}{comment.body}</li>))
+            }
         </div>
     );
 };
