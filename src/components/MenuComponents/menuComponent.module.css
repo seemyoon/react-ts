@@ -1,0 +1,17 @@
+ul {
+    padding: 0;
+    gap: 20px;
+    margin: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.linkMenu {
+    text-decoration: none;
+    font-size: 44px;
+}

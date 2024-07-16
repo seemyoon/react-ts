@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
-import PostsPage from "./pages/PostsPage";
-import CommentsPage from "./pages/CommentsPage";
+import PostsPage from "./pages/PostsPage/PostsPage";
+import CommentsPage from "./pages/CommentsPage/CommentsPage";
 import MainLayout from "./layouts/MainLayout";
-import UserPage from "./pages/UserPage";
-import UsersPages from "./pages/UsersPages";
+import PostsOfUserPage from "./pages/PostsPage/PostsOfUserPage";
+import UsersPages from "./pages/UsersPage/UsersPages";
+import CommentsOfPostPage from "./pages/CommentsPage/CommentsOfPostPage";
 
 
 const root = ReactDOM.createRoot(
@@ -25,11 +26,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "users/:id",
-                element: <UserPage/>
+                element: <PostsOfUserPage/>
             },
             {
                 path: "posts",
                 element: <PostsPage/>
+            },
+            {
+                path: "users/:id/posts/:postId",
+                element: <CommentsOfPostPage/>
             },
             {
                 path: "comments",
