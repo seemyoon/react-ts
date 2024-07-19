@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
-import ChildComponent from "./components/ChildComponent";
-import MenuComponent from "./components/MenuComponent";
+import PostsComponent from "./components/PostsComponent";
 
+// import ChildComponent from "./components/ChildComponent";
+// import MenuComponent from "./components/MenuComponent";
+// import LinksComponents from "./components/LinksComponents";
 
 // const App = () => {
 //     const [value, dispatch] = useReducer((prevState: number, action: { type: string; payload: number }) => {
@@ -85,24 +87,43 @@ import MenuComponent from "./components/MenuComponent";
 // };
 // export default App;
 
+// const App = () => {
+// // memo
+//     const [id, setId] = useState<number>(1)
+//     console.log("app render")
+//     const incrementID = () => {
+//         setId(id => id + 1)
+//     }
+//     const [link1, setLink1] = useState("asd")
+//     const [link2, setLink2] = useState("zxc")
+//     const [link3, setLink3] = useState("qwe")
+//     const links = useMemo(() => {
+//         console.log("useMemo render")
+//         return [link1, link2, link3]
+//     }, []);
+//
+//     const xxx = useCallback(() => {
+//         console.log("qweasdzxc")
+//         return undefined
+//     }, [id]);
+//     return (<div>
+//         <LinksComponents links={links} xxx={xxx}/>
+//         <MenuComponent/>
+//         <ChildComponent id={id}/>
+//         <button onClick={incrementID}>Click here</button>
+//     </div>)
+// }
+// export default App;
+// useMemo
+// useCallback
 
 const App = () => {
-// memo
-    const [id, setId] = useState<number>(1)
-console.log("app render")
-    const incrementID = () => {
-        setId(id => id + 1)
-    }
+    return (
+        <div>
 
-    return (<div>
-            <MenuComponent/>
-            <ChildComponent id={id}/>
-            <button onClick={incrementID}>Click here</button>
+        <PostsComponent/>
         </div>
-
     );
 };
 
 export default App;
-// useMemo
-// useCallback
