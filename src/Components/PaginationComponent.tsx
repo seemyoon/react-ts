@@ -13,15 +13,14 @@ interface IProps {
 const PaginationComponent: FC<IProps> = ({next, prev, changePage}) => {
     return (
         <div>
-            <button
+            <button disabled={!prev}
                 onClick={() => {
                     changePage('prev');
                 }}>prev
             </button>
-            <button
+            <button disabled={!next}
                 onClick={() => {
                     changePage('next');
-
                 }}>next
             </button>
         </div>
