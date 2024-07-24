@@ -5,8 +5,8 @@ const HeaderComponent = () => {
     return (
         <div>
             <ul>
-                <li><NavLink to={"/"}>auth page</NavLink></li>
-                <li><NavLink to={"/cars"}>cars page</NavLink></li>
+                <li><NavLink to={"/"}>auth</NavLink></li>
+                <li><NavLink to={"/cars"}>cars</NavLink></li>
             </ul>
         </div>
     );

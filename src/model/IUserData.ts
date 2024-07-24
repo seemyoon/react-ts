@@ -1,4 +1,4 @@
-export interface AuthDataModel{
+export interface IUserData {
     username: string;
     password: string;
 }
