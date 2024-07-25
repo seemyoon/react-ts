@@ -5,6 +5,7 @@ const retrieveLocalStorage = <T, >(key: string) => {
     }
     const pair = JSON.parse(parsePair);
     return pair as T;
+
 };
 
 export default retrieveLocalStorage;

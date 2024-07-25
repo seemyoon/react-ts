@@ -2,18 +2,13 @@ import React, {FC} from 'react';
 import {ICarWithAuth} from "../model/ICarWithAuth";
 
 interface IProps {
-    cars: ICarWithAuth[];
+    cars: ICarWithAuth[]
 }
 
 const CarsComponent: FC<IProps> = ({cars}) => {
     return (
         <div>
-            {
-                cars.map(value =>
-                    <div key={value.id}>{value.id}
-                        {value.brand}
-                    </div>)
-            }
+            {cars.map(car  => (<div key={car.id}>{car.brand}</div>))}
         </div>
     );
 };
