@@ -40,6 +40,7 @@ const carService = {
             return response.data
         } catch (e) {
             const axiosError = e as AxiosError;
+            console.log(axiosError)
             if (axiosError?.response?.status === 401) {
                 const refreshToken = retrieveLocalStorage<ITokenObtainPair>("tokenPair").refresh;
                 await authService.refresh(refreshToken)
